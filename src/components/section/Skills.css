@@ -1,0 +1,426 @@
+/* =========================================
+   SKILLS — FLOATING 360° ORBIT
+   ========================================= */
+
+.pixel-skills-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  min-height: 100vh;
+
+  padding:
+    clamp(5rem, 8vw, 7rem)
+    1rem
+    clamp(4rem, 7vw, 6rem);
+
+  color: var(
+    --site-text,
+    #30452d
+  );
+
+  background: transparent !important;
+}
+
+.pixel-skills-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1100px, 100%);
+  margin: 0 auto;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.pixel-skills-header {
+  width: min(680px, 100%);
+  margin: 0 auto 1rem;
+
+  text-align: center;
+}
+
+.pixel-skills-kicker {
+  color: var(
+    --site-moss,
+    #718a4b
+  );
+
+  font-family:
+    var(
+      --font-code,
+      "Space Mono",
+      monospace
+    );
+
+  font-size: 0.66rem;
+  letter-spacing: 0.13em;
+}
+
+.pixel-skills-header h2 {
+  margin: 0.45rem 0 0;
+
+  color: var(
+    --site-green,
+    #425c31
+  ) !important;
+
+  font-family:
+    var(
+      --font-code,
+      "Space Mono",
+      monospace
+    ) !important;
+
+  font-size:
+    clamp(2.5rem, 6vw, 4.7rem);
+
+  font-weight: 600;
+  letter-spacing: -0.07em;
+
+  text-shadow:
+    3px 3px 0
+    rgba(150, 180, 125, 0.18);
+}
+
+.pixel-skills-header p {
+  max-width: 58ch;
+  margin: 0.75rem auto 0;
+
+  color: var(
+    --site-text-soft,
+    #5f7158
+  );
+
+  font-family:
+    var(
+      --font-body,
+      "DM Mono",
+      monospace
+    );
+
+  font-size:
+    clamp(0.72rem, 1.4vw, 0.9rem);
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   ORBIT AREA — NO BOX
+   ========================================= */
+
+.pixel-skills-orbit {
+  position: relative;
+
+  width: min(820px, 94vw);
+  height: 560px;
+
+  display: grid;
+  place-items: center;
+
+  margin: 0 auto;
+
+  overflow: visible;
+  background: transparent;
+}
+
+.pixel-skills-orbit::before {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: min(520px, 68vw);
+  aspect-ratio: 1;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(190, 215, 170, 0.2),
+      rgba(126, 170, 160, 0.1) 44%,
+      transparent 72%
+    );
+
+  filter: blur(22px);
+  pointer-events: none;
+}
+
+.pixel-skills-orbit-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: min(600px, 76vw);
+  height: min(250px, 34vw);
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-12deg);
+
+  border:
+    1px dashed
+    var(
+      --site-line,
+      rgba(58, 79, 47, 0.28)
+    );
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.pixel-skills-orbit-ring--two {
+  transform:
+    translate(-50%, -50%)
+    rotate(21deg);
+
+  opacity: 0.55;
+}
+
+.pixel-skills-dome {
+  position: relative;
+  z-index: 2;
+
+  width: 720px;
+  height: 600px;
+
+  transform-origin: center center;
+  will-change: transform;
+
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+
+  background: transparent !important;
+
+  transition:
+    transform 120ms linear;
+}
+
+.pixel-skills-dome:active {
+  cursor: grabbing;
+}
+
+.pixel-skills-dome > div,
+.pixel-skills-dome canvas,
+.pixel-skills-dome svg {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.pixel-skills-instruction {
+  position: absolute;
+  left: 50%;
+  bottom: 1.1rem;
+  z-index: 3;
+
+  display: flex;
+  gap: 0.65rem;
+
+  transform: translateX(-50%);
+
+  color: var(
+    --site-text-soft,
+    #5f7158
+  );
+
+  font-family:
+    var(
+      --font-code,
+      "Space Mono",
+      monospace
+    );
+
+  font-size: 0.52rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.pixel-skills-instruction span:first-child {
+  color: var(
+    --site-moss,
+    #718a4b
+  );
+}
+
+/* =========================================
+   GARDEN DETAILS
+   ========================================= */
+
+.pixel-skills-decoration span {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+}
+
+.pixel-skills-leaf {
+  width: 95px;
+  height: 135px;
+
+  opacity: 0.4;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 10px,
+      var(
+        --site-sage-3,
+        #8eaa70
+      )
+      10px 18px
+    );
+
+  clip-path:
+    polygon(
+      50% 0,
+      68% 20%,
+      61% 42%,
+      83% 56%,
+      63% 70%,
+      50% 100%,
+      37% 70%,
+      17% 56%,
+      39% 42%,
+      32% 20%
+    );
+}
+
+.pixel-skills-leaf--one {
+  left: -26px;
+  bottom: 7%;
+  transform: rotate(8deg);
+}
+
+.pixel-skills-leaf--two {
+  right: -22px;
+  top: 19%;
+
+  transform:
+    rotate(-10deg)
+    scale(0.78);
+}
+
+.pixel-skills-flower {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 1px;
+
+  background:
+    var(
+      --site-yellow,
+      #d8c466
+    );
+
+  box-shadow:
+    10px 0
+      var(
+        --site-lilac,
+        #9d96bd
+      ),
+    -10px 0
+      var(
+        --site-lilac,
+        #9d96bd
+      ),
+    0 10px
+      var(
+        --site-lilac,
+        #9d96bd
+      ),
+    0 -10px
+      var(
+        --site-lilac,
+        #9d96bd
+      );
+}
+
+.pixel-skills-flower--one {
+  left: 5%;
+  top: 29%;
+}
+
+.pixel-skills-flower--two {
+  right: 5%;
+  bottom: 13%;
+  transform: scale(0.72);
+}
+
+/* =========================================
+   DARK MODE
+   ========================================= */
+
+html.dark
+  .pixel-skills-header
+  h2,
+body.dark
+  .pixel-skills-header
+  h2,
+html[data-theme="dark"]
+  .pixel-skills-header
+  h2,
+body[data-theme="dark"]
+  .pixel-skills-header
+  h2 {
+  color: var(
+    --site-green,
+    #b7d39f
+  ) !important;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 760px) {
+  .pixel-skills-section {
+    min-height: auto;
+    padding-inline: 0.65rem;
+  }
+
+  .pixel-skills-orbit {
+    width: 100%;
+    height: 470px;
+  }
+
+  .pixel-skills-dome {
+    width: 650px;
+    height: 540px;
+  }
+
+  .pixel-skills-instruction {
+    bottom: 0.35rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .pixel-skills-orbit {
+    height: 410px;
+  }
+
+  .pixel-skills-dome {
+    width: 590px;
+    height: 500px;
+  }
+
+  .pixel-skills-orbit-ring {
+    width: 88vw;
+    height: 38vw;
+  }
+}
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .pixel-skills-dome {
+    transform: scale(0.7) !important;
+    transition: none !important;
+  }
+}

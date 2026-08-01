@@ -1,0 +1,122 @@
+/*
+ * Army Bomb cursor.
+ *
+ * The image never changes size on hover, so it does not jump
+ * when moving onto buttons such as the light/dark switch.
+ */
+
+.magic-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2147483647;
+
+  width: 52px;
+  height: 52px;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+  opacity: 0;
+
+  will-change:
+    transform,
+    opacity;
+
+  transition:
+    opacity 90ms ease;
+}
+
+.magic-cursor img {
+  position: relative;
+  z-index: 2;
+
+  width: 52px;
+  height: 52px;
+
+  display: block;
+  object-fit: contain;
+  image-rendering: pixelated;
+
+  filter:
+    drop-shadow(
+      3px
+      4px
+      0
+      rgba(72, 45, 92, 0.22)
+    )
+    drop-shadow(
+      0
+      0
+      8px
+      rgba(187, 151, 219, 0.38)
+    );
+
+  user-select: none;
+  -webkit-user-drag: none;
+
+  /*
+   * Do not scale the image on links/buttons.
+   * Scaling was the reason it appeared to jump.
+   */
+  transform: none !important;
+}
+
+.magic-cursor__glow {
+  position: absolute;
+  z-index: 1;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(213, 190, 235, 0.24);
+
+  filter: blur(8px);
+
+  opacity: 0.7;
+
+  transition:
+    opacity 110ms ease;
+}
+
+.magic-cursor.is-visible {
+  opacity: 1;
+}
+
+/*
+ * Interactive elements only brighten the glow.
+ * The cursor position and image size remain unchanged.
+ */
+.magic-cursor.is-interactive
+.magic-cursor__glow {
+  opacity: 1;
+}
+
+.magic-cursor.is-pressed
+.magic-cursor__glow {
+  opacity: 0.45;
+}
+
+@media (pointer: fine) {
+  .magic-cursor {
+    display: flex;
+  }
+}
+
+@media (pointer: coarse) {
+  .magic-cursor {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .magic-cursor,
+  .magic-cursor__glow {
+    transition: none;
+  }
+}

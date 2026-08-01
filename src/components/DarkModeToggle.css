@@ -1,0 +1,397 @@
+/* =========================================================
+   DARK MODE TOGGLE + MAGIC SHOP DAY/NIGHT LIGHTING
+   This file is imported by DarkModeToggle.tsx.
+   ========================================================= */
+
+.theme-toggle {
+  position: relative;
+  isolation: isolate;
+
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  display: inline-grid;
+  place-items: center;
+
+  overflow: visible;
+
+  border: 2px solid #765493 !important;
+  border-radius: 13px;
+
+  color: #765493 !important;
+  background: #fffaff !important;
+
+  box-shadow:
+    5px 5px 0 rgba(82, 53, 103, 0.16),
+    inset 0 0 0 2px rgba(214, 195, 235, 0.34);
+
+  cursor:
+    url("/cursors/army-bomb-cursor.png") 8 8,
+    pointer !important;
+
+  transition:
+    transform 160ms steps(2, end),
+    box-shadow 160ms steps(2, end),
+    background 180ms ease;
+}
+
+.theme-toggle:hover {
+  transform: translate(-2px, -2px);
+
+  box-shadow:
+    7px 7px 0 rgba(82, 53, 103, 0.18),
+    0 0 22px rgba(184, 154, 214, 0.34),
+    inset 0 0 0 2px rgba(214, 195, 235, 0.42);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid #c8afe1 !important;
+  outline-offset: 4px;
+}
+
+.theme-toggle__expand {
+  position: relative;
+  z-index: 2;
+
+  width: 28px !important;
+  height: 28px !important;
+
+  display: inline-grid !important;
+  place-items: center !important;
+
+  color: inherit !important;
+}
+
+.theme-toggle__expand svg,
+.theme-toggle__expand svg *,
+.theme-toggle__icon,
+.theme-toggle__icon * {
+  color: inherit !important;
+  fill: none !important;
+  stroke: currentColor !important;
+}
+
+.theme-toggle__glow {
+  position: absolute;
+  inset: 6px;
+  z-index: 0;
+
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Light mode is visibly ON: sun + soft gold/lilac glow. */
+.theme-toggle--light {
+  color: #765493 !important;
+  background:
+    linear-gradient(
+      145deg,
+      #fffdf4,
+      #f4ecff
+    ) !important;
+}
+
+.theme-toggle--light .theme-toggle__glow {
+  background: radial-gradient(
+    circle,
+    rgba(246, 218, 143, 0.70),
+    rgba(218, 195, 236, 0.28) 48%,
+    transparent 72%
+  );
+
+  box-shadow:
+    0 0 16px rgba(239, 209, 130, 0.60),
+    0 0 28px rgba(189, 157, 218, 0.24);
+}
+
+/* Dark mode: moon, still purple—not mint or green. */
+.theme-toggle--dark {
+  color: #eadcff !important;
+  background:
+    linear-gradient(
+      145deg,
+      #2b1c38,
+      #1b1225
+    ) !important;
+
+  border-color: #c7a9df !important;
+}
+
+.theme-toggle--dark .theme-toggle__glow {
+  background: radial-gradient(
+    circle,
+    rgba(198, 172, 225, 0.34),
+    transparent 70%
+  );
+
+  box-shadow: 0 0 22px rgba(188, 155, 220, 0.28);
+}
+
+/* ---------------------------------------------------------
+   Remove the remaining green browser selection.
+   --------------------------------------------------------- */
+
+::selection {
+  color: #3b2949 !important;
+  background: #d8c4ed !important;
+}
+
+::-moz-selection {
+  color: #3b2949 !important;
+  background: #d8c4ed !important;
+}
+
+/* ---------------------------------------------------------
+   Keep the whole light-mode page lilac. No blue transition.
+   --------------------------------------------------------- */
+
+html:not(.dark):not([data-theme="dark"]),
+html:not(.dark):not([data-theme="dark"]) body,
+html:not(.dark):not([data-theme="dark"]) #root,
+html:not(.dark):not([data-theme="dark"]) .app,
+html:not(.dark):not([data-theme="dark"]) .about-page,
+html:not(.dark):not([data-theme="dark"]) .main-content {
+  background:
+    linear-gradient(
+      145deg,
+      #f8f3ff 0%,
+      #f1eafa 52%,
+      #ebe4f6 100%
+    ) !important;
+
+  background-color: #f7f2ff !important;
+}
+
+/* Any old blue/cyan page films become transparent lilac. */
+html:not(.dark):not([data-theme="dark"]) body::before,
+html:not(.dark):not([data-theme="dark"]) body::after,
+html:not(.dark):not([data-theme="dark"]) .about-page::before,
+html:not(.dark):not([data-theme="dark"]) .about-page::after,
+html:not(.dark):not([data-theme="dark"]) #skills::before,
+html:not(.dark):not([data-theme="dark"]) #skills::after {
+  background:
+    radial-gradient(
+      circle at 18% 14%,
+      rgba(215, 198, 237, 0.32),
+      transparent 31%
+    ),
+    radial-gradient(
+      circle at 83% 18%,
+      rgba(192, 170, 221, 0.20),
+      transparent 33%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(248, 243, 255, 0.88),
+      rgba(238, 231, 248, 0.88)
+    ) !important;
+}
+
+/* ---------------------------------------------------------
+   Magic Shop: real sun in light mode.
+   The previous CSS made the sun a crescent with an inset shadow.
+   --------------------------------------------------------- */
+
+html:not(.dark):not([data-theme="dark"]) .pixel-sun {
+  left: auto !important;
+  right: 8% !important;
+  top: 7% !important;
+
+  width: 48px !important;
+  height: 48px !important;
+
+  border: 4px solid #765493 !important;
+  border-radius: 50% !important;
+
+  background: #f1d993 !important;
+
+  box-shadow:
+    0 0 0 7px rgba(241, 217, 147, 0.22),
+    0 0 24px rgba(238, 207, 119, 0.52),
+    0 0 44px rgba(198, 164, 220, 0.20) !important;
+
+  filter: none !important;
+}
+
+html:not(.dark):not([data-theme="dark"]) .pixel-sun::before {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  top: -15px;
+
+  width: 5px;
+  height: 9px;
+
+  transform: translateX(-50%);
+
+  background: #e6ca7c;
+
+  box-shadow:
+    0 69px #e6ca7c,
+    -34px 34px #e6ca7c,
+    34px 34px #e6ca7c,
+    -24px 10px #e6ca7c,
+    24px 10px #e6ca7c,
+    -24px 58px #e6ca7c,
+    24px 58px #e6ca7c;
+}
+
+html:not(.dark):not([data-theme="dark"]) .pixel-sun::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 249, 210, 0.30);
+}
+
+/* Dark mode uses a purple crescent moon. */
+html.dark .pixel-sun,
+body.dark .pixel-sun,
+html[data-theme="dark"] .pixel-sun,
+body[data-theme="dark"] .pixel-sun {
+  left: auto !important;
+  right: 8% !important;
+  top: 7% !important;
+
+  width: 48px !important;
+  height: 48px !important;
+
+  border: 4px solid #c3a5dd !important;
+  border-radius: 50% !important;
+
+  background: #d9c7ed !important;
+
+  box-shadow:
+    -13px 7px 0 2px #5d4275 inset,
+    0 0 0 7px rgba(201, 169, 227, 0.13),
+    0 0 25px rgba(198, 165, 224, 0.30) !important;
+
+  filter: none !important;
+}
+
+html.dark .pixel-sun::before,
+html.dark .pixel-sun::after,
+body.dark .pixel-sun::before,
+body.dark .pixel-sun::after,
+html[data-theme="dark"] .pixel-sun::before,
+html[data-theme="dark"] .pixel-sun::after {
+  content: none !important;
+}
+
+/* ---------------------------------------------------------
+   The shop lights are ON in both modes.
+   --------------------------------------------------------- */
+
+.pixel-shop-lantern {
+  border-color: #5b3d70 !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff7c9 0%,
+      #edd27f 54%,
+      #c5a4dc 100%
+    ) !important;
+
+  box-shadow:
+    0 0 0 5px rgba(238, 214, 139, 0.18),
+    0 0 18px rgba(242, 216, 135, 0.72),
+    0 0 36px rgba(187, 151, 216, 0.34) !important;
+}
+
+.pixel-shop-lantern::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+
+  background: rgba(255, 250, 205, 0.68);
+
+  filter: blur(2px);
+
+  animation: magicShopLampFlicker 2.2s steps(3, end) infinite;
+}
+
+.pixel-main-shop__window,
+.pixel-home-window {
+  background:
+    radial-gradient(
+      circle at 32% 30%,
+      rgba(255, 250, 207, 0.92) 0 4px,
+      transparent 5px
+    ),
+    radial-gradient(
+      circle at 70% 66%,
+      rgba(235, 210, 139, 0.84) 0 4px,
+      transparent 5px
+    ),
+    linear-gradient(
+      135deg,
+      #ddc8ea,
+      #f5e6b5
+    ) !important;
+
+  box-shadow:
+    inset 7px 0 rgba(255, 255, 255, 0.20),
+    0 0 14px rgba(239, 213, 137, 0.62),
+    0 0 30px rgba(181, 145, 211, 0.26) !important;
+}
+
+/* A lit wash from the shop—lilac and warm cream only. */
+.pixel-scene-light {
+  background: radial-gradient(
+    circle at
+      calc(50% + var(--scene-light-x))
+      calc(24% + var(--scene-light-y)),
+    rgba(255, 244, 197, 0.34),
+    rgba(211, 189, 233, 0.18) 31%,
+    transparent 60%
+  ) !important;
+
+  mix-blend-mode: screen;
+}
+
+/* Purple scrollbar */
+* {
+  scrollbar-color: #9a7abd #eee7f9 !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #eee7f9 !important;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid #eee7f9 !important;
+  border-radius: 999px !important;
+
+  background: linear-gradient(
+    180deg,
+    #cdb9e8,
+    #a98ac9,
+    #7f5ca3
+  ) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7f5ca3 !important;
+}
+
+@keyframes magicShopLampFlicker {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel-shop-lantern::after {
+    animation: none !important;
+  }
+}

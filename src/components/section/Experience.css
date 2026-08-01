@@ -1,0 +1,283 @@
+/* =========================================================
+   SEAMLESS EXPERIENCE SECTION
+   Shares its first colour with the bottom of the book section.
+   ========================================================= */
+
+.experience-section {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  overflow: hidden;
+  margin-top: -2px;
+  padding:
+    clamp(4.5rem, 8vw, 7rem)
+    0
+    clamp(5rem, 8vw, 7rem);
+
+  border: 0 !important;
+  box-shadow: none !important;
+  transition:
+    background 300ms ease,
+    color 300ms ease;
+}
+
+/* The light section starts with exactly the same colour
+   used at the end of the book gradient. */
+.experience-section--light {
+  background:
+    radial-gradient(
+      circle at 50% 4%,
+      rgba(144, 190, 183, 0.13),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 18% 38%,
+      rgba(211, 177, 198, 0.1),
+      transparent 25%
+    ),
+    linear-gradient(
+      to bottom,
+      #f4f7f6 0%,
+      #eef5f2 34%,
+      #edf3f2 100%
+    );
+}
+
+/* The dark section starts with exactly the same colour
+   used at the end of the book gradient. */
+.experience-section--dark {
+  background:
+    radial-gradient(
+      circle at 50% 3%,
+      rgba(91, 154, 145, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 21% 44%,
+      rgba(110, 100, 153, 0.08),
+      transparent 27%
+    ),
+    linear-gradient(
+      to bottom,
+      #0a111b 0%,
+      #08131a 35%,
+      #071015 100%
+    );
+}
+
+/* An extra transparent bridge softens the join without
+   creating a visible stripe or line. */
+.experience-section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: -150px;
+  height: 260px;
+  pointer-events: none;
+}
+
+.experience-section--light::before {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(244, 247, 246, 0) 0%,
+      rgba(244, 247, 246, 0.7) 58%,
+      #f4f7f6 100%
+    );
+}
+
+.experience-section--dark::before {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(10, 17, 27, 0) 0%,
+      rgba(10, 17, 27, 0.72) 58%,
+      #0a111b 100%
+    );
+}
+
+.experience-section__ambient {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 2.5rem;
+  width: min(78vw, 920px);
+  height: 260px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(34px);
+}
+
+.experience-section--light .experience-section__ambient {
+  background:
+    radial-gradient(
+      circle,
+      rgba(136, 188, 177, 0.11),
+      transparent 68%
+    );
+}
+
+.experience-section--dark .experience-section__ambient {
+  background:
+    radial-gradient(
+      circle,
+      rgba(103, 170, 157, 0.1),
+      transparent 68%
+    );
+}
+
+.experience-section__content {
+  position: relative;
+  z-index: 2;
+}
+
+.experience-section__title {
+  margin: 0 0 2rem;
+  color: var(--experience-heading);
+  font-family: var(--font-code, "Space Mono", monospace);
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+
+/* =========================================================
+   EXPERIENCE CARDS
+   ========================================================= */
+
+.experience-card {
+  border-width: 1.5px !important;
+  border-style: solid !important;
+  border-radius: 14px !important;
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    background 300ms ease !important;
+}
+
+.experience-section--light .experience-card {
+  border-color: rgba(196, 139, 175, 0.42) !important;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.89),
+      rgba(250, 252, 251, 0.79)
+    ) !important;
+
+  box-shadow:
+    0 15px 34px rgba(74, 100, 94, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86) !important;
+}
+
+.experience-section--dark .experience-card {
+  border-color: rgba(153, 181, 197, 0.28) !important;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(27, 39, 55, 0.87),
+      rgba(21, 33, 47, 0.8)
+    ) !important;
+
+  box-shadow:
+    0 17px 38px rgba(0, 0, 0, 0.21),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+}
+
+.experience-card:hover {
+  transform: translateY(-3px);
+}
+
+.experience-section--light .experience-card:hover {
+  border-color: rgba(196, 139, 175, 0.67) !important;
+  box-shadow:
+    0 20px 42px rgba(74, 100, 94, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.experience-section--dark .experience-card:hover {
+  border-color: rgba(154, 201, 205, 0.48) !important;
+  box-shadow:
+    0 21px 44px rgba(0, 0, 0, 0.27),
+    0 0 20px rgba(94, 167, 158, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+
+.experience-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.experience-card__title {
+  color: var(--experience-title) !important;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem) !important;
+}
+
+.experience-card__company {
+  margin-top: 0.35rem;
+  color: var(--experience-text);
+  font-size: 1.05rem;
+  font-weight: 600;
+  opacity: 0.88;
+}
+
+.experience-card__meta {
+  display: grid;
+  gap: 0.42rem;
+  color: var(--experience-text);
+  opacity: 0.78;
+}
+
+.experience-card__meta > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.experience-card__meta span {
+  font-size: 0.9rem;
+}
+
+.experience-card__list {
+  display: grid;
+  gap: 0.4rem;
+  color: var(--experience-text);
+}
+
+.experience-card__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.experience-card__bullet {
+  margin-right: 0.35rem;
+  color: var(--experience-accent);
+}
+
+@media (max-width: 700px) {
+  .experience-section {
+    padding-top: 4rem;
+  }
+
+  .experience-card__header {
+    flex-direction: column;
+  }
+
+  .experience-card__meta {
+    width: 100%;
+  }
+
+  .experience-card__meta > div {
+    white-space: normal;
+  }
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 230" role="img" aria-labelledby="title desc" shape-rendering="crispEdges">
+  <title id="title">Pastel purple cassette</title>
+  <desc id="desc">A pixel-edged pastel purple cassette tape for the Story artifact and About section.</desc>
+  <g stroke="#55406f" stroke-width="8" stroke-linejoin="miter">
+    <path fill="#f7f0ff" d="M20 22h320v186H20z"/>
+    <path fill="#d9c6f2" d="M36 38h288v54H36z"/>
+    <path fill="#fffaff" d="M58 104h244v66H58z"/>
+    <path fill="#c7aee7" d="M100 176h160l20 24H80z"/>
+    <circle fill="#fffaff" cx="105" cy="137" r="28"/>
+    <circle fill="#fffaff" cx="255" cy="137" r="28"/>
+    <circle fill="#8d6bb7" cx="105" cy="137" r="13" stroke-width="6"/>
+    <circle fill="#8d6bb7" cx="255" cy="137" r="13" stroke-width="6"/>
+    <path fill="#9973df" d="M145 48l28 18v30l-28 12z" stroke-width="5"/>
+    <path fill="#9973df" d="M215 48l-28 18v30l28 12z" stroke-width="5"/>
+    <path fill="#f3d98f" d="M44 44h28v16H44z" stroke="none"/>
+    <path fill="#f0bad7" d="M288 44h28v16h-28z" stroke="none"/>
+  </g>
+  <text x="180" y="84" text-anchor="middle" font-family="monospace" font-size="18" fill="#55406f">MAGIC SHOP</text>
+</svg>

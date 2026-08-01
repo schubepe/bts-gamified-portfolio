@@ -1,0 +1,230 @@
+/* =========================================================
+   MAGIC SHOP — GLOBAL PALETTE ONLY
+   This file changes colour, not component geometry.
+   It is imported once by CassetteAbout.tsx.
+   ========================================================= */
+
+:root {
+  --magic-page: #f7efff;
+  --magic-page-2: #eee4fa;
+  --magic-panel: #fff9ff;
+  --magic-lilac: #ddcff1;
+  --magic-purple: #8e6ab8;
+  --magic-deep: #4c335f;
+  --magic-text: #372542;
+  --magic-muted: #74647d;
+  --magic-pink: #efc2dc;
+  --magic-blue: #cbd5f5;
+  --magic-gold: #f2d995;
+  --magic-border: rgba(76, 51, 95, 0.48);
+  --magic-shadow: rgba(75, 49, 94, 0.17);
+}
+
+html,
+body,
+#root {
+  background-color: var(--magic-page) !important;
+}
+
+body {
+  color: var(--magic-text) !important;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(242, 194, 221, 0.34), transparent 29%),
+    radial-gradient(circle at 88% 15%, rgba(196, 205, 245, 0.38), transparent 31%),
+    linear-gradient(145deg, var(--magic-page), var(--magic-page-2)) !important;
+}
+
+/* Main sections: purple atmosphere without changing their layout. */
+#about,
+.about-section,
+#projects,
+.projects-section,
+#skills,
+.skills-section,
+#certifications,
+footer,
+.footer {
+  color: var(--magic-text) !important;
+  background:
+    linear-gradient(rgba(95, 64, 119, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(95, 64, 119, 0.045) 1px, transparent 1px),
+    radial-gradient(circle at 16% 16%, rgba(242, 198, 225, 0.28), transparent 29%),
+    radial-gradient(circle at 84% 18%, rgba(193, 204, 245, 0.3), transparent 31%),
+    linear-gradient(145deg, #f8f1ff, #efe6fa) !important;
+  background-size: 10px 10px, 10px 10px, auto, auto, auto !important;
+}
+
+#skills h1,
+#skills h2,
+#skills h3,
+#projects h1,
+#projects h2,
+#projects h3,
+#certifications h1,
+#certifications h2,
+#certifications h3 {
+  color: var(--magic-deep) !important;
+  -webkit-text-fill-color: var(--magic-deep) !important;
+}
+
+#skills p,
+#skills span,
+#projects p,
+#certifications p,
+footer,
+.footer {
+  color: var(--magic-muted) !important;
+}
+
+/* Navigation — preserve its current shapes, only recolour it. */
+.navigation {
+  border-color: var(--magic-border) !important;
+  background: rgba(250, 244, 255, 0.91) !important;
+  box-shadow: 0 8px 30px rgba(75, 49, 94, 0.12) !important;
+}
+
+.navigation .signature-name,
+.navigation .nav-wordmark {
+  color: var(--magic-purple) !important;
+  -webkit-text-fill-color: var(--magic-purple) !important;
+}
+
+.navigation .nav-tab,
+.navigation .mobile-nav-tab,
+.navigation .mobile-menu-btn {
+  color: var(--magic-deep) !important;
+  -webkit-text-fill-color: var(--magic-deep) !important;
+  border-color: transparent !important;
+}
+
+.navigation .nav-tab.active {
+  color: var(--magic-deep) !important;
+  -webkit-text-fill-color: var(--magic-deep) !important;
+  background: rgba(221, 207, 241, 0.68) !important;
+  border-bottom-color: var(--magic-pink) !important;
+}
+
+.navigation .nav-tab:hover,
+.navigation .mobile-nav-tab:hover {
+  background: rgba(235, 220, 248, 0.62) !important;
+}
+
+/* Purple skill-orbit canvas. The DomeGallery itself remains unchanged. */
+#skills {
+  position: relative;
+  overflow: hidden;
+}
+
+#skills::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.66), transparent 22%),
+    radial-gradient(circle at 50% 50%, rgba(187, 153, 218, 0.23), transparent 48%);
+}
+
+#skills > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* So orbit paths and small captions read purple instead of sage green. */
+#skills svg,
+#skills [class*="orbit"],
+#skills [class*="ring"] {
+  color: var(--magic-purple) !important;
+  border-color: rgba(111, 79, 139, 0.38) !important;
+}
+
+/* Common pale cards used elsewhere on the homepage. */
+#projects article,
+#projects [class*="card"],
+#projects [class*="panel"] {
+  border-color: var(--magic-border) !important;
+}
+
+html.dark,
+body.dark,
+html[data-theme="dark"] {
+  --magic-page: #171020;
+  --magic-page-2: #24172f;
+  --magic-panel: #2a1c35;
+  --magic-lilac: #4d3760;
+  --magic-purple: #c7a8e3;
+  --magic-deep: #f0e0ff;
+  --magic-text: #fff8ff;
+  --magic-muted: #cdbfd5;
+  --magic-border: rgba(218, 190, 238, 0.34);
+  --magic-shadow: rgba(0, 0, 0, 0.36);
+}
+
+html.dark body,
+body.dark,
+html[data-theme="dark"] body {
+  color: var(--magic-text) !important;
+  background:
+    radial-gradient(circle at 14% 10%, rgba(160, 93, 148, 0.2), transparent 29%),
+    radial-gradient(circle at 86% 15%, rgba(88, 101, 165, 0.22), transparent 31%),
+    linear-gradient(145deg, #140d1d, #21152c) !important;
+}
+
+html.dark #about,
+html.dark #projects,
+html.dark #skills,
+html.dark #certifications,
+body.dark #about,
+body.dark #projects,
+body.dark #skills,
+body.dark #certifications,
+html[data-theme="dark"] #about,
+html[data-theme="dark"] #projects,
+html[data-theme="dark"] #skills,
+html[data-theme="dark"] #certifications {
+  color: var(--magic-text) !important;
+  background:
+    linear-gradient(rgba(230, 207, 245, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(230, 207, 245, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 16% 16%, rgba(168, 92, 149, 0.16), transparent 29%),
+    radial-gradient(circle at 84% 18%, rgba(91, 103, 174, 0.17), transparent 31%),
+    linear-gradient(145deg, #171020, #24172f) !important;
+  background-size: 10px 10px, 10px 10px, auto, auto, auto !important;
+}
+
+html.dark .navigation,
+body.dark .navigation,
+html[data-theme="dark"] .navigation {
+  border-color: var(--magic-border) !important;
+  background: rgba(31, 20, 41, 0.93) !important;
+}
+
+html.dark .navigation .signature-name,
+html.dark .navigation .nav-wordmark,
+html.dark .navigation .nav-tab,
+html.dark .navigation .mobile-nav-tab,
+body.dark .navigation .signature-name,
+body.dark .navigation .nav-wordmark,
+body.dark .navigation .nav-tab,
+body.dark .navigation .mobile-nav-tab,
+html[data-theme="dark"] .navigation .signature-name,
+html[data-theme="dark"] .navigation .nav-wordmark,
+html[data-theme="dark"] .navigation .nav-tab,
+html[data-theme="dark"] .navigation .mobile-nav-tab {
+  color: var(--magic-deep) !important;
+  -webkit-text-fill-color: var(--magic-deep) !important;
+}
+
+html.dark #skills h1,
+html.dark #skills h2,
+html.dark #skills h3,
+body.dark #skills h1,
+body.dark #skills h2,
+body.dark #skills h3,
+html[data-theme="dark"] #skills h1,
+html[data-theme="dark"] #skills h2,
+html[data-theme="dark"] #skills h3 {
+  color: var(--magic-text) !important;
+  -webkit-text-fill-color: var(--magic-text) !important;
+}

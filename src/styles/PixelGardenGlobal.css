@@ -1,0 +1,775 @@
+/* =========================================================
+   GLOBAL PIXEL GARDEN THEME
+   Import this AFTER index.css so it becomes the final
+   visual layer across the whole portfolio.
+   ========================================================= */
+
+:root {
+  --site-cream: #f5f3d9;
+  --site-cream-soft: #eef2d8;
+  --site-paper: rgba(248, 247, 224, 0.86);
+  --site-paper-strong: rgba(252, 249, 226, 0.95);
+
+  --site-sage-1: #dce9c6;
+  --site-sage-2: #b9cf99;
+  --site-sage-3: #8eaa70;
+  --site-sage-4: #667f4b;
+
+  --site-green: #425c31;
+  --site-forest: #273d22;
+  --site-moss: #718a4b;
+  --site-teal: #7eaaa0;
+  --site-blue: #acc8c1;
+  --site-lilac: #9d96bd;
+  --site-orange: #d98d4a;
+  --site-yellow: #d8c466;
+
+  --site-text: #30452d;
+  --site-text-soft: #5f7158;
+  --site-line: rgba(58, 79, 47, 0.38);
+  --site-line-soft: rgba(58, 79, 47, 0.2);
+  --site-shadow: rgba(55, 72, 43, 0.17);
+
+  /* Update the old global variables too. */
+  --page-background: #eef3d9;
+  --page-background-secondary: #e6efd5;
+  --page-background-tertiary: #e9eed7;
+
+  --text-primary: var(--site-text);
+  --text-secondary: var(--site-text-soft);
+  --text-muted: #71806b;
+
+  --accent-cyan: var(--site-teal);
+  --accent-blue: var(--site-blue);
+  --accent-mint: var(--site-sage-2);
+  --accent-green: var(--site-sage-4);
+  --accent-lavender: var(--site-lilac);
+  --accent-yellow: var(--site-yellow);
+  --accent-pink: #d8b1b7;
+
+  --glass-background: rgba(248, 247, 224, 0.68);
+  --glass-background-strong: rgba(250, 248, 226, 0.86);
+  --glass-border: rgba(64, 91, 51, 0.36);
+  --glass-border-soft: rgba(64, 91, 51, 0.22);
+  --glass-glow: rgba(137, 177, 118, 0.2);
+}
+
+html.dark,
+body.dark,
+.dark,
+html[data-theme="dark"],
+body[data-theme="dark"] {
+  --site-cream: #172315;
+  --site-cream-soft: #111c12;
+  --site-paper: rgba(19, 31, 18, 0.88);
+  --site-paper-strong: rgba(23, 37, 22, 0.96);
+
+  --site-sage-1: #20361f;
+  --site-sage-2: #315331;
+  --site-sage-3: #53754b;
+  --site-sage-4: #8eaa70;
+
+  --site-green: #b7d39f;
+  --site-forest: #d4e7c0;
+  --site-moss: #9fba80;
+  --site-teal: #86b8ab;
+  --site-blue: #9abcb7;
+  --site-lilac: #aaa2c7;
+  --site-orange: #d9955a;
+  --site-yellow: #d8ca79;
+
+  --site-text: #dcebcf;
+  --site-text-soft: #aebfa5;
+  --site-line: rgba(172, 210, 148, 0.28);
+  --site-line-soft: rgba(172, 210, 148, 0.16);
+  --site-shadow: rgba(0, 0, 0, 0.35);
+
+  --page-background: #09120b;
+  --page-background-secondary: #101a11;
+  --page-background-tertiary: #121812;
+
+  --text-primary: var(--site-text);
+  --text-secondary: var(--site-text-soft);
+  --text-muted: #82927d;
+
+  --accent-cyan: var(--site-teal);
+  --accent-blue: var(--site-blue);
+  --accent-mint: #78a46e;
+  --accent-green: var(--site-sage-4);
+  --accent-lavender: var(--site-lilac);
+  --accent-yellow: var(--site-yellow);
+  --accent-pink: #bd939e;
+
+  --glass-background: rgba(17, 30, 17, 0.76);
+  --glass-background-strong: rgba(19, 34, 19, 0.9);
+  --glass-border: rgba(172, 210, 148, 0.3);
+  --glass-border-soft: rgba(172, 210, 148, 0.18);
+  --glass-glow: rgba(137, 183, 121, 0.13);
+}
+
+/* =========================================================
+   ONE CONTINUOUS PAGE BACKGROUND
+   ========================================================= */
+
+html {
+  background: var(--page-background) !important;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+
+  color: var(--site-text) !important;
+
+  background:
+    radial-gradient(
+      circle at 13% 8%,
+      rgba(184, 211, 157, 0.58),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 84% 12%,
+      rgba(169, 190, 199, 0.38),
+      transparent 29%
+    ),
+    radial-gradient(
+      circle at 55% 46%,
+      rgba(201, 212, 168, 0.25),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 18% 78%,
+      rgba(153, 177, 128, 0.23),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 82% 83%,
+      rgba(166, 153, 191, 0.18),
+      transparent 27%
+    ),
+    linear-gradient(
+      145deg,
+      #eef3d9 0%,
+      #e6efd5 46%,
+      #e9eed7 100%
+    ) !important;
+
+  background-attachment: fixed !important;
+}
+
+html.dark body,
+body.dark,
+html[data-theme="dark"] body,
+body[data-theme="dark"] {
+  background:
+    radial-gradient(
+      circle at 13% 8%,
+      rgba(70, 119, 68, 0.27),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 84% 12%,
+      rgba(92, 111, 133, 0.2),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 55% 46%,
+      rgba(83, 118, 70, 0.14),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 82% 83%,
+      rgba(103, 91, 137, 0.13),
+      transparent 28%
+    ),
+    linear-gradient(
+      145deg,
+      #09120b 0%,
+      #101a11 46%,
+      #121812 100%
+    ) !important;
+}
+
+/* Fixed pixel-grid texture shared by every section. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+
+  pointer-events: none;
+  opacity: 0.12;
+
+  background:
+    linear-gradient(
+      rgba(55, 75, 48, 0.2) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(55, 75, 48, 0.16) 1px,
+      transparent 1px
+    );
+
+  background-size: 8px 8px;
+  image-rendering: pixelated;
+}
+
+html.dark body::before,
+body.dark::before,
+html[data-theme="dark"] body::before,
+body[data-theme="dark"]::before {
+  opacity: 0.1;
+}
+
+/* Soft garden mist, also shared rather than repeated by section. */
+body::after {
+  content: "";
+  position: fixed;
+  left: 50%;
+  bottom: -19rem;
+  z-index: 0;
+
+  width: min(92vw, 1100px);
+  height: 38rem;
+
+  transform: translateX(-50%);
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(144, 184, 126, 0.25),
+      rgba(124, 169, 157, 0.12) 42%,
+      transparent 72%
+    );
+
+  filter: blur(50px);
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+
+  min-height: 100vh;
+  background: transparent !important;
+}
+
+main,
+.main-content,
+.about-page {
+  background: transparent !important;
+}
+
+/* Remove the old cyber/iridescent page atmosphere. */
+.about-page::before,
+.about-page::after {
+  display: none !important;
+}
+
+/* =========================================================
+   REMOVE ALL HARD SECTION BACKGROUNDS
+   ========================================================= */
+
+main > section,
+main section[id],
+#about,
+#projects,
+#experience,
+#skills,
+#contact,
+.about-section,
+.projects-section,
+.experience-section,
+.experience-section--light,
+.experience-section--dark,
+.skills-section,
+.contact-section,
+.certifications-section,
+.pixel-garden-game,
+.lab-landing,
+.pixel-projects-section,
+.binder-book-section,
+.metal-book-section,
+footer,
+.footer {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+
+/*
+ * These were the previous book → experience bridge colours.
+ * Removing them lets the single body background show through.
+ */
+.binder-book-section::after,
+.metal-book-section::after,
+.experience-section::before {
+  opacity: 0 !important;
+  background: transparent !important;
+}
+
+.experience-section__ambient {
+  opacity: 0.16 !important;
+}
+
+/* Keep section spacing intentional without creating page blocks. */
+main section[id] {
+  position: relative;
+  scroll-margin-top: 86px;
+}
+
+/* =========================================================
+   PIXEL-GARDEN NAVIGATION
+   Overrides the old inline pink glass background.
+   ========================================================= */
+
+.navigation {
+  border-bottom:
+    3px solid var(--site-forest) !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(248, 247, 224, 0.93),
+      rgba(231, 238, 207, 0.9)
+    ) !important;
+
+  box-shadow:
+    0 4px 0 rgba(48, 69, 45, 0.16),
+    0 11px 28px rgba(52, 72, 45, 0.1) !important;
+
+  backdrop-filter:
+    blur(14px)
+    saturate(110%) !important;
+
+  -webkit-backdrop-filter:
+    blur(14px)
+    saturate(110%) !important;
+}
+
+html.dark .navigation,
+body.dark .navigation,
+html[data-theme="dark"] .navigation,
+body[data-theme="dark"] .navigation {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(15, 27, 15, 0.95),
+      rgba(19, 34, 18, 0.92)
+    ) !important;
+
+  box-shadow:
+    0 4px 0 rgba(141, 174, 121, 0.09),
+    0 12px 30px rgba(0, 0, 0, 0.28) !important;
+}
+
+.signature-name {
+  color: var(--site-green) !important;
+  -webkit-text-fill-color:
+    var(--site-green) !important;
+
+  text-shadow:
+    2px 2px 0 color-mix(
+      in srgb,
+      var(--site-sage-2) 36%,
+      transparent
+    );
+}
+
+.nav-tab,
+.mobile-nav-tab {
+  color: var(--site-text) !important;
+}
+
+.nav-tab {
+  position: relative;
+  padding: 0.45rem 0.55rem !important;
+}
+
+.nav-tab:hover,
+.nav-tab.active {
+  color: var(--site-green) !important;
+  background:
+    rgba(177, 201, 143, 0.16) !important;
+}
+
+.nav-tab.active {
+  box-shadow:
+    inset 0 -3px var(--site-sage-4);
+}
+
+.mobile-menu {
+  border-top:
+    3px solid var(--site-forest) !important;
+
+  background:
+    var(--site-paper-strong) !important;
+}
+
+/* =========================================================
+   SHARED SECTION HEADINGS
+   ========================================================= */
+
+#experience .experience-section__title,
+#skills > h2,
+#skills .section-title,
+.skills-section .section-title,
+.certifications-section h2,
+.contact-section h2,
+footer h2,
+.footer h2 {
+  color: var(--site-green) !important;
+
+  font-family:
+    var(--font-code, "Space Mono", monospace) !important;
+
+  letter-spacing: -0.045em;
+  text-shadow:
+    3px 3px 0 color-mix(
+      in srgb,
+      var(--site-sage-2) 20%,
+      transparent
+    );
+}
+
+/* =========================================================
+   EXPERIENCE — SAME PIXEL PAPER LANGUAGE
+   ========================================================= */
+
+.experience-card,
+#experience [data-slot="card"] {
+  border:
+    2px solid var(--site-forest) !important;
+  border-radius: 5px !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.3),
+      transparent 45%
+    ),
+    var(--site-paper) !important;
+
+  box-shadow:
+    5px 5px 0 var(--site-shadow) !important;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.experience-card:hover,
+#experience [data-slot="card"]:hover {
+  transform: translate(-2px, -2px) !important;
+
+  border-color:
+    var(--site-sage-4) !important;
+
+  box-shadow:
+    7px 7px 0 var(--site-shadow) !important;
+}
+
+.experience-card__title,
+.experience-card__company,
+.experience-card__meta,
+.experience-card__list {
+  color: var(--site-text) !important;
+}
+
+.experience-card__title {
+  color: var(--site-green) !important;
+}
+
+.experience-card__bullet {
+  color: var(--site-orange) !important;
+}
+
+/* =========================================================
+   SKILLS / CERTIFICATIONS — THEME OLD CARDS WITHOUT
+   REQUIRING A JSX REWRITE
+   ========================================================= */
+
+#skills > .container > .grid > *,
+#skills .max-w-6xl > .grid > *,
+.skills-section > .container > .grid > *,
+.skills-section .max-w-6xl > .grid > *,
+.skill-card,
+.skills-card,
+.certification-card {
+  border:
+    2px solid var(--site-forest) !important;
+  border-radius: 5px !important;
+
+  color: var(--site-text) !important;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(64, 89, 52, 0.055) 0 1px,
+      transparent 1px 6px
+    ),
+    var(--site-paper) !important;
+
+  box-shadow:
+    5px 5px 0 var(--site-shadow) !important;
+
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  transition:
+    transform 160ms steps(2, end),
+    box-shadow 160ms ease !important;
+}
+
+#skills > .container > .grid > *:hover,
+#skills .max-w-6xl > .grid > *:hover,
+.skills-section > .container > .grid > *:hover,
+.skills-section .max-w-6xl > .grid > *:hover,
+.skill-card:hover,
+.skills-card:hover,
+.certification-card:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow:
+    7px 7px 0 var(--site-shadow) !important;
+}
+
+#skills h3,
+.skills-section h3,
+.certifications-section h3 {
+  color: var(--site-green) !important;
+}
+
+#skills p,
+#skills span,
+.skills-section p,
+.skills-section span,
+.certifications-section p {
+  color: var(--site-text-soft);
+}
+
+/* Old pill/badge styles become compact inventory labels. */
+#skills [class*="badge"],
+#skills [class*="Badge"],
+.skills-section [class*="badge"],
+.skills-section [class*="Badge"],
+.certifications-section [class*="badge"] {
+  border:
+    1px solid var(--site-line) !important;
+  border-radius: 2px !important;
+
+  color: var(--site-text) !important;
+  background:
+    rgba(177, 201, 143, 0.16) !important;
+
+  box-shadow: none !important;
+}
+
+/* =========================================================
+   CONTACT AND FORM ELEMENTS
+   ========================================================= */
+
+.contact-page,
+.contact-section,
+#contact {
+  color: var(--site-text) !important;
+}
+
+.contact-card,
+.contact-form,
+#contact form,
+.contact-section form {
+  border:
+    2px solid var(--site-forest) !important;
+  border-radius: 5px !important;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(64, 89, 52, 0.055) 0 1px,
+      transparent 1px 6px
+    ),
+    var(--site-paper) !important;
+
+  box-shadow:
+    6px 6px 0 var(--site-shadow) !important;
+}
+
+#contact input,
+#contact textarea,
+.contact-section input,
+.contact-section textarea,
+.contact-page input,
+.contact-page textarea {
+  border:
+    2px solid var(--site-line) !important;
+  border-radius: 3px !important;
+
+  color: var(--site-text) !important;
+  background:
+    var(--site-paper-strong) !important;
+
+  outline: none !important;
+}
+
+#contact input:focus,
+#contact textarea:focus,
+.contact-section input:focus,
+.contact-section textarea:focus,
+.contact-page input:focus,
+.contact-page textarea:focus {
+  border-color:
+    var(--site-sage-4) !important;
+
+  box-shadow:
+    0 0 0 3px
+    color-mix(
+      in srgb,
+      var(--site-sage-3) 20%,
+      transparent
+    ) !important;
+}
+
+/* =========================================================
+   SHARED OLD BUTTON OVERRIDES
+   ========================================================= */
+
+.project-btn,
+.project-btn-outline,
+.scroll-down-btn,
+.contact-btn,
+.contact-section button[type="submit"],
+.contact-page button[type="submit"] {
+  min-height: 42px;
+
+  border:
+    2px solid var(--site-forest) !important;
+  border-radius: 3px !important;
+
+  color: var(--site-text) !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.25),
+      transparent
+    ),
+    var(--site-sage-2) !important;
+
+  box-shadow:
+    4px 4px 0 var(--site-shadow) !important;
+
+  font-family:
+    var(--font-code, "Space Mono", monospace) !important;
+
+  transition:
+    transform 150ms steps(2, end),
+    box-shadow 150ms ease !important;
+}
+
+.project-btn:hover,
+.project-btn-outline:hover,
+.scroll-down-btn:hover,
+.contact-btn:hover,
+.contact-section button[type="submit"]:hover,
+.contact-page button[type="submit"]:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow:
+    6px 6px 0 var(--site-shadow) !important;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer,
+.footer {
+  position: relative;
+
+  border-top:
+    3px solid var(--site-forest) !important;
+
+  color: var(--site-text) !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(153, 177, 128, 0.13)
+    ) !important;
+}
+
+footer a,
+.footer a {
+  color: var(--site-text) !important;
+}
+
+footer a:hover,
+.footer a:hover {
+  color: var(--site-green) !important;
+}
+
+/* =========================================================
+   SCROLLBAR + SELECTION
+   ========================================================= */
+
+::selection {
+  color: #243721 !important;
+  background: var(--site-sage-2) !important;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--page-background) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  border:
+    2px solid var(--page-background) !important;
+  border-radius: 2px !important;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      var(--site-sage-4) 0 7px,
+      var(--site-teal) 7px 14px
+    ) !important;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll !important;
+  }
+
+  body::before {
+    background-size: 7px 7px;
+  }
+
+  .navigation {
+    border-bottom-width: 2px !important;
+  }
+
+  .experience-card,
+  #experience [data-slot="card"],
+  .skill-card,
+  .skills-card,
+  .certification-card,
+  .contact-card,
+  .contact-form,
+  #contact form {
+    box-shadow:
+      4px 4px 0 var(--site-shadow) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    display: none;
+  }
+}

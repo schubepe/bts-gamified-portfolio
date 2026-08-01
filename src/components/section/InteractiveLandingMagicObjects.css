@@ -1,0 +1,191 @@
+/* Magic Shop artifact artwork only. Keep this imported after InteractiveLanding.css. */
+.magic-shop-object-art {
+  width: 66px !important;
+  height: 66px !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: visible !important;
+}
+
+.magic-shop-object-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  pointer-events: none;
+  user-select: none;
+  filter:
+    drop-shadow(4px 5px 0 rgba(74, 48, 98, 0.22))
+    saturate(0.92);
+}
+
+.magic-shop-object-image-form {
+  width: 75%;
+  height: 75%;
+  transform: rotate(-7deg);
+}
+
+.magic-shop-object-image-story {
+  width: 96%;
+  height: 82%;
+  transform: rotate(-3deg);
+}
+
+.magic-shop-code-screen {
+  position: relative;
+  display: block;
+  width: 64px;
+  height: 58px;
+  border: 4px solid #53396d;
+  background: #ded7fa;
+  box-shadow:
+    inset 0 0 0 3px #f9f4ff,
+    5px 6px 0 rgba(75, 50, 96, 0.22);
+  image-rendering: pixelated;
+}
+
+.magic-shop-code-screen__bar {
+  position: absolute;
+  inset: 3px 3px auto;
+  height: 9px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding-left: 4px;
+  border-bottom: 3px solid #5c4275;
+  background: #bcace7;
+}
+
+.magic-shop-code-screen__bar i {
+  width: 4px;
+  height: 4px;
+  background: #f7d98e;
+}
+
+.magic-shop-code-screen__display {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: 17px;
+  bottom: 10px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #fffaff;
+}
+
+.magic-shop-code-screen__display img {
+  width: 86%;
+  height: 86%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.magic-shop-code-screen__base {
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 34px;
+  height: 8px;
+  transform: translateX(-50%);
+  border: 3px solid #53396d;
+  background: #9d82cf;
+}
+
+.pixel-drag-object.is-completed .magic-shop-object-image,
+.pixel-drag-object.is-completed .magic-shop-code-screen {
+  transform: scale(0.88);
+  transform-origin: center;
+  margin: auto;
+}
+
+.pixel-drag-object.is-dragging .magic-shop-object-image,
+.pixel-drag-object.is-dragging .magic-shop-code-screen {
+  filter:
+    drop-shadow(5px 7px 0 rgba(74, 48, 98, 0.24))
+    brightness(1.06)
+    saturate(1.08);
+}
+
+/* A returned card lives inside the station body, so 50% is its true centre. */
+.pixel-restored-object {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 30;
+  width: 82px;
+  min-height: 108px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 0.15rem;
+  padding: 0.5rem 0.45rem;
+  transform: translate(-50%, -50%);
+  border: 3px solid #583b6d;
+  color: #3d294c;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7), transparent 44%),
+    color-mix(in srgb, var(--object-accent) 23%, #f7f2ff);
+  box-shadow: 0 8px 16px rgba(46, 30, 56, 0.16);
+  pointer-events: none;
+}
+
+.pixel-restored-object .magic-shop-object-art {
+  width: 64px !important;
+  height: 64px !important;
+  transform: none;
+}
+
+.pixel-restored-object__title,
+.pixel-restored-object__status {
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  color: #3d294c !important;
+  font-family: var(--font-code, "Space Mono", monospace);
+  line-height: 1.1;
+}
+
+.pixel-restored-object__title {
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.pixel-restored-object__status {
+  font-size: 0.42rem;
+}
+
+html.dark .magic-shop-code-screen,
+body.dark .magic-shop-code-screen,
+html[data-theme="dark"] .magic-shop-code-screen {
+  border-color: #cbb4e5;
+  background: #5a4071;
+  box-shadow:
+    inset 0 0 0 3px #2d2038,
+    5px 6px 0 rgba(0, 0, 0, 0.28);
+}
+
+html.dark .magic-shop-code-screen__display,
+body.dark .magic-shop-code-screen__display,
+html[data-theme="dark"] .magic-shop-code-screen__display {
+  background: #f5effb;
+}
+
+@media (max-width: 600px) {
+  .magic-shop-object-art {
+    width: 54px !important;
+    height: 54px !important;
+  }
+
+  .magic-shop-code-screen {
+    width: 52px;
+    height: 47px;
+    border-width: 3px;
+  }
+}

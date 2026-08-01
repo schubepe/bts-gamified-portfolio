@@ -1,0 +1,160 @@
+/* =========================================================
+   FINAL CURSOR / WARNING / FOOTER COLOUR FIX
+   Keep this imported after App.css.
+   ========================================================= */
+
+/* Fallback styling for the project warning.
+   Navigation.tsx also now uses purple inline colours. */
+.projects-locked-warning {
+  border-color: rgba(126, 91, 159, 0.42) !important;
+  color: #513a63 !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(252, 248, 255, 0.99),
+      rgba(235, 224, 248, 0.99)
+    ) !important;
+
+  box-shadow:
+    0 16px 40px rgba(77, 50, 96, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.88) !important;
+}
+
+html.dark .projects-locked-warning,
+body.dark .projects-locked-warning,
+html[data-theme="dark"] .projects-locked-warning {
+  border-color: rgba(215, 190, 235, 0.34) !important;
+  color: #f6eaff !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(31, 20, 42, 0.98),
+      rgba(47, 30, 61, 0.98)
+    ) !important;
+}
+
+/* Remove every remaining green footer divider. */
+footer,
+.footer,
+.site-footer,
+[class*="footer"] {
+  border-top-color: #7f5ca3 !important;
+}
+
+footer::before,
+footer::after,
+.footer::before,
+.footer::after,
+.site-footer::before,
+.site-footer::after {
+  border-color: #7f5ca3 !important;
+  background-color: #7f5ca3 !important;
+}
+
+/*
+ * Some footer components use a child div as the divider.
+ * Target only very thin first children so normal content
+ * backgrounds are not replaced.
+ */
+footer > :first-child,
+.footer > :first-child,
+.site-footer > :first-child {
+  border-top-color: #7f5ca3 !important;
+}
+
+/* Purple scrollbar too. */
+* {
+  scrollbar-color: #9472b8 #eee7f9 !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #eee7f9 !important;
+}
+
+::-webkit-scrollbar-thumb {
+  border-color: #eee7f9 !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      #cbb8e5,
+      #9472b8,
+      #765493
+    ) !important;
+}
+/* =========================================
+   REAL ARMY BOMB BROWSER CURSOR
+   ========================================= */
+
+/* =========================================
+   ARMY BOMB CURSOR — ONE CURSOR ONLY
+   ========================================= */
+
+@media (pointer: fine) {
+  html,
+  body,
+  #root,
+  #root * {
+    cursor:
+      url("/cursors/army-bomb-cursor.png") 8 8,
+      auto !important;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  [role="button"],
+  [draggable="true"],
+  .pixel-drag-object,
+  .cassette-about__tape {
+    cursor:
+      url("/cursors/army-bomb-cursor.png") 8 8,
+      pointer !important;
+  }
+}
+
+/* Keep the same bitmap and hotspot in both themes so the cursor cannot jump. */
+
+@media (pointer: fine) {
+  html.dark,
+  html.dark body,
+  html.dark #root,
+  html.dark #root *,
+
+  html[data-theme="dark"],
+  html[data-theme="dark"] body,
+  html[data-theme="dark"] #root,
+  html[data-theme="dark"] #root *,
+
+  body.dark,
+  body.dark #root,
+  body.dark #root * {
+    cursor:
+      url("/cursors/army-bomb-cursor.png") 8 8,
+      auto !important;
+  }
+
+  html.dark a,
+  html.dark button,
+  html.dark [role="button"],
+  html.dark [draggable="true"],
+
+  html[data-theme="dark"] a,
+  html[data-theme="dark"] button,
+  html[data-theme="dark"] [role="button"],
+  html[data-theme="dark"] [draggable="true"],
+
+  body.dark a,
+  body.dark button,
+  body.dark [role="button"],
+  body.dark [draggable="true"] {
+    cursor:
+      url("/cursors/army-bomb-cursor.png") 8 8,
+      pointer !important;
+      
+  }
+}
