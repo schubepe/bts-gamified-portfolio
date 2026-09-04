@@ -1,1 +1,0 @@
-import{p as i}from"./index-CTnx2l1N.js";const n=(e,d)=>(e==null?void 0:e.trim())||d,s={github:n(void 0,i.github),linkedin:n(void 0,i.linkedin),email:n(void 0,i.email),display:{github:n(void 0,i.github).replace("https://",""),linkedin:n(void 0,i.linkedin).replace("https://",""),email:n(void 0,i.email)}};export{s};
