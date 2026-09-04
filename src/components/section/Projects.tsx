@@ -9,7 +9,6 @@ import {
   X,
 } from 'lucide-react';
 
-import { socialLinks } from '../../config/socialLinks';
 import './Projects.css';
 
 type FolderColour =
@@ -25,6 +24,8 @@ interface Project {
   title: string;
   shortLabel: string;
   description: string;
+  role: string;
+  timeline: string;
   technologies: string[];
   detailsUrl?: string;
   githubUrl?: string;
@@ -35,56 +36,49 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
-    id: 'project-one',
-    title: 'Project One',
-    shortLabel: 'PROJECT_01',
+    id: 'bnp-paribas-automation',
+    title: 'Analyst Workflow Automation',
+    shortLabel: 'BNP_01',
     description:
-      'A brief description of your first project. Highlight the key features and what makes it unique.',
-    technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB'],
+      'Designed and implemented automation solutions for repetitive analyst workflows at BNP Paribas, reducing manual processing time by 50+ hours per analyst per month and freeing the team to focus on higher-value analysis.',
+    role: 'Intern in Cash Services - BNP Paribas',
+    timeline: 'May 2025 - Nov 2025',
+      technologies: ['Power Automate', 'Process Design', 'Financial Analysis'],
     detailsUrl: '',
-    githubUrl: socialLinks.repositories.projectOne,
+    githubUrl: '',
     folderColour: 'orange',
-    fileCount: '04 FILES',
-    category: 'FEATURED BUILD',
-  },
-  {
-    id: 'project-two',
-    title: 'Project Two',
-    shortLabel: 'PROJECT_02',
-    description:
-      'A brief description of your second project. Highlight the key features and what makes it unique.',
-    technologies: ['Python', 'Flask', 'PostgreSQL', 'Docker'],
-    detailsUrl: '',
-    githubUrl: socialLinks.repositories.projectTwo,
-    folderColour: 'sage',
-    fileCount: '06 FILES',
-    category: 'DIGITAL SYSTEM',
-  },
-  {
-    id: 'project-three',
-    title: 'Project Three',
-    shortLabel: 'PROJECT_03',
-    description:
-      'A brief description of your third project. Highlight the key features and what makes it unique.',
-    technologies: ['JavaScript', 'Express', 'AWS', 'Tailwind CSS'],
-    detailsUrl: '',
-    githubUrl: socialLinks.repositories.projectThree,
-    folderColour: 'forest',
-    fileCount: '05 FILES',
-    category: 'CREATIVE CODE',
-  },
-  {
-    id: 'project-four',
-    title: 'Project Four',
-    shortLabel: 'PROJECT_04',
-    description:
-      'A brief description of your fourth project. Highlight the key features and what makes it unique.',
-    technologies: ['C++', 'CMake', 'OpenGL'],
-    detailsUrl: '',
-    githubUrl: socialLinks.repositories.projectFour,
-    folderColour: 'blue',
     fileCount: '03 FILES',
-    category: 'EXPERIMENT',
+    category: 'PROCESS AUTOMATION',
+  },
+  {
+    id: 'aws-mna-ecosystem',
+    title: 'M&A Ecosystem Mapping',
+    shortLabel: 'AWS_01',
+    description:
+      'Mapped the competitive M&A ecosystem for AWS, identifying key players, deal patterns, and whitespace opportunities. Sized a multi-million-dollar pipeline opportunity by analyzing market dynamics and partner landscapes.',
+    role: 'Intern in Business Development - AWS',
+    timeline: 'Jun 2026 - Sep 2026',
+      technologies: ['Market Analysis', 'Pipeline Sizing', 'Competitive Intelligence'],
+    detailsUrl: '',
+    githubUrl: '',
+    folderColour: 'sage',
+    fileCount: '05 FILES',
+    category: 'STRATEGIC ANALYSIS',
+  },
+  {
+    id: 'aws-ai-competitive-agent',
+    title: 'AI Competitive Intelligence Agent',
+    shortLabel: 'AWS_02',
+    description:
+      'Built an AI-powered competitive intelligence agent that helps M&A deal teams navigate live deal situations against competitors. The tool synthesizes market data, battle cards, and strategic insights in real time.',
+    role: 'Intern in Business Development - AWS',
+    timeline: 'Jun 2026 - Sep 2026',
+      technologies: ['AI-Assisted Development', 'Prompt Engineering', 'Competitive Strategy'],
+    detailsUrl: '',
+    githubUrl: '',
+    folderColour: 'forest',
+    fileCount: '06 FILES',
+    category: 'AI ENGINEERING',
   },
 ];
 
@@ -187,9 +181,10 @@ const Projects = () => {
                     {openProject.category}
                   </span>
 
-                  <strong>{openProject.title}</strong>
+                  <strong>{openProject.role}</strong>
 
-                  <small>Creative fashion-tech project archive</small>
+                 
+                  <small>{openProject.timeline}</small>
                 </div>
 
                 <div className="pixel-project-information">
@@ -204,7 +199,7 @@ const Projects = () => {
                   <p>{openProject.description}</p>
 
                   <div className="pixel-project-tech">
-                    <span>TOOLS + STACK</span>
+                    <span>KEY SKILLS</span>
 
                     <div>
                       {openProject.technologies.map((technology) => (

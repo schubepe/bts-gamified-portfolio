@@ -3,16 +3,18 @@
  * Keep public links empty until you are ready to show them.
  */
 export const portfolio = {
-  name: 'Your Name',
-  role: 'Creative technologist',
+  name: 'Perlita Schubert',
+  role: 'Finance brain, tech heart',
   intro: [
-    "hey, i'm your name! i love making ideas tangible",
-    'i turn early ideas into things people can hold, wear, or click through',
-    'i work across design and technology, combining the tools each project needs',
+    "Hi, I'm Perlita, a BBA dual degree student at EBS and UC3M.",
+    'From automating analyst workflows saving 50+ hours monthly at BNP Paribas, to mapping M&A ecosystems, sizing a multi-million dollar pipeline opportunity and building an AI competitive intelligence agent for deal teams at AWS.',
+    'This portfolio documents my journey.',
   ],
   github: '',
-  linkedin: '',
-  email: '',
+  linkedin: 'https://www.linkedin.com/in/perlitaschubert/?locale=en',
+  email: 'perlita.schubert@gmail.com',
   resumePath: '',
 } as const;
+
+
 

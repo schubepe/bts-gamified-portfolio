@@ -634,3 +634,18 @@ html[data-theme="dark"] .cassette-about__slot.is-drop-ready {
     margin-inline: auto;
   }
 }
+.is-dark .cassette-about {
+  color: #e8e8e8 !important;
+}
+
+.is-dark .cassette-about__player {
+  background: #1e1329 !important;
+  border-color: #6b4f8a !important;
+  color: #e8e8e8 !important;
+}
+
+.is-dark .cassette-about__heading h2,
+.is-dark .cassette-about__heading span,
+.is-dark .cassette-about__heading p {
+  color: #1e1329 !important;
+}

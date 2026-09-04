@@ -80,40 +80,40 @@ const MODULES: SkillModule[] = [
   {
     id: "form",
     number: "01",
-    title: "FORM",
+    title: "ORIGINATE",
     objectName: "LIGHT STICK",
-    homeName: "FORM STATION",
+    homeName: "ORIGINATE STATION",
     summary:
-      "I sculpt fashion accessories and turn soft references into structured, printable objects.",
+      "I map deal ecosystems and build stakeholder networks to surface opportunities early.",
     proof:
-      "3D-printed bags · rapid prototyping · support removal · sanding · hardware",
-    tools: ["Blender", "Bambu Studio", "Silk PLA+", "3D printing"],
+      "M&A ecosystem mapping · 20+ stakeholder interviews · PwC partnership validation · AWS CPG vertical",
+    tools: ["Stakeholder Mapping", "Market Sizing", "Partner Strategy", "Deal Sourcing"],
     accent: "#b99ade",
   },
   {
     id: "code",
     number: "02",
-    title: "CODE",
+    title: "ANALYSIS",
     objectName: "CODE SCREEN",
-    homeName: "CODE STATION",
+    homeName: "ANALYSIS STATION",
     summary:
-      "I build interactive front-end worlds and useful digital tools with personality.",
+      "I turn raw financial and market data into decision-ready insight.",
     proof:
-      "React portfolios · VS Code themes · playful UI systems · GitHub workflows",
-    tools: ["React", "TypeScript", "CSS", "VS Code", "GitHub"],
+      "300 transactions/week reconciliation · bottom-up pipeline sizing · M&A playbook · CPG vertical model",
+    tools: ["Financial Analysis", "Pipeline Modeling", "Excel", "Data Reconciliation"],
     accent: "#aebcf0",
   },
   {
     id: "story",
     number: "03",
-    title: "STORY",
+    title: "EXECUTE",
     objectName: "CASSETTE TAPE",
-    homeName: "STORY STATION",
+    homeName: "EXECUTE STATION",
     summary:
-      "I turn concepts into clear stories, campaigns and memorable visual experiences.",
+      "I convert frameworks into deployed tools that measurably change how people work.",
     proof:
-      "Case studies · UGC · brand partnerships · creative direction · gamification",
-    tools: ["Figma", "Notion", "UGC", "Brand strategy"],
+      "Power Automate pilot · AI competitive-intelligence agent · 50+ hrs/analyst saved · ~50% prep time reduction",
+    tools: ["Power Automate", "AI-Assisted Development", "Prompt Engineering", "Process Design"],
     accent: "#8f72bb",
   },
 ];
@@ -722,8 +722,8 @@ const InteractiveLanding = ({ asciiArt }: InteractiveLandingProps) => {
             </h1>
 
             <p>
-              Return FORM, CODE and STORY to the Magic Shop terminal.
-              FORM gives shape. CODE gives function. STORY gives meaning.
+              Return ORIGINATE, ANALYSIS and EXECUTE to the Magic Shop terminal.
+              ORIGINATION finds the opportunity. ANALYSIS turns data into insight. EXECUTION delivers the solution.
             </p>
 
             <div className="pixel-quest-status" aria-live="polite">
@@ -750,7 +750,7 @@ const InteractiveLanding = ({ asciiArt }: InteractiveLandingProps) => {
               />
 
               <p>
-                The shop familiar says: drag an artifact—or click it, then
+                Drag an artifact or click it, then
                 choose its matching station.
               </p>
             </div>
@@ -799,7 +799,7 @@ const InteractiveLanding = ({ asciiArt }: InteractiveLandingProps) => {
                   <span className="pixel-main-shop__sign">
                     <small>YOUR</small>
                     <strong>MAGIC SHOP</strong>
-                    <small>FORM · CODE · STORY</small>
+                    <small>ORIGINATE · ANALYSIS · EXECUTE</small>
                   </span>
                   <span className="pixel-main-shop__window pixel-main-shop__window--left" />
                   <span className="pixel-main-shop__window pixel-main-shop__window--right" />

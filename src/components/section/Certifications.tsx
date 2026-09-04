@@ -1,7 +1,7 @@
-import { useDarkMode } from '../../contexts/DarkModeContext';
-
 import purplePixelBadgeFrame from '../../assets/badges/purple-pixel-badge-frame.png';
-import codeMark from '../../assets/magic-shop/code-mark.svg';
+
+import awsCloudPractitioner from '../../assets/badges/Cloud_Practitioner.png';
+import awsAiPractitioner from '../../assets/badges/AI_Practitioner.png';
 
 import './Certifications.css';
 
@@ -16,41 +16,34 @@ interface CertificationBadge {
 
 const BADGES: CertificationBadge[] = [
   {
-    id: 'certification-one',
-    image: codeMark,
-    alt: 'Replace with your first certification badge',
-    title: 'Your certification',
-    subtitle: 'Issuing organization',
+    id: 'aws-cloud-practitioner',
+    image: awsCloudPractitioner,
+    alt: 'AWS Certified Cloud Practitioner badge',
+    title: 'AWS Certified Cloud Practitioner',
+    subtitle: 'Amazon Web Services · June 2026',
     credentialUrl: '',
   },
   {
-    id: 'certification-two',
-    image: codeMark,
-    alt: 'Replace with your second certification badge',
-    title: 'Another certification',
-    subtitle: 'Issuing organization',
+    id: 'aws-ai-practitioner',
+    image: awsAiPractitioner,
+    alt: 'AWS Certified AI Practitioner badge',
+    title: 'AWS Certified AI Practitioner',
+    subtitle: 'Amazon Web Services · July 2026',
     credentialUrl: '',
   },
 ];
 
 const Certifications = () => {
-  const { isDarkMode } = useDarkMode();
-
   return (
-    <section
-      id="certifications"
-      className={`magic-badges ${
-        isDarkMode ? 'is-dark' : 'is-light'
-      }`}
-    >
+    <section id="certifications" className="magic-badges is-light">
       <div className="magic-badges__shell">
         <header className="magic-badges__heading">
           <span>MAGIC_SHOP.ACHIEVEMENTS</span>
 
-          <h2>Badges earned</h2>
+          <h2>Certifications</h2>
 
           <p>
-            Credentials collected while building my technical toolkit.
+            Credentials earned along the way.
           </p>
         </header>
 

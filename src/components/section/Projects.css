@@ -938,15 +938,13 @@ body[data-theme="dark"] .pixel-projects-header h2 {
 
 .pixel-project-tech i {
   padding: 0.38rem 0.48rem;
-
-  border: 2px solid var(--projects-line);
-
-  color: var(--projects-ink);
-  background: rgba(255, 255, 255, 0.18);
-
+  border: 2px solid #5a3d6e;
+  color: #5a3d6e;
+  background: #f3edf7;
   font-family: var(--font-body, "DM Mono", monospace);
   font-size: 0.58rem;
   font-style: normal;
+  border-radius: 4px;
 }
 
 .pixel-project-actions {
@@ -1214,4 +1212,66 @@ body[data-theme="dark"] .pixel-project-window {
       url("/cursors/army-bomb-cursor.png") 8 8,
       pointer !important;
   }
+  .pixel-project-window-body {
+  background: var(--projects-paper, #ffffff);
+}
+
+}
+html[data-theme="dark"] .pixel-project-window-body,
+html.dark .pixel-project-window-body,
+body.dark .pixel-project-window-body {
+  background: #1a1a2e !important;
+}
+
+html[data-theme="dark"] .pixel-project-information h3,
+html.dark .pixel-project-information h3,
+body.dark .pixel-project-information h3 {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .pixel-project-information p,
+html.dark .pixel-project-information p,
+body.dark .pixel-project-information p {
+  color: #d4d4d4 !important;
+}
+
+html[data-theme="dark"] .pixel-project-information-label,
+html.dark .pixel-project-information-label,
+body.dark .pixel-project-information-label {
+  color: #b99ade !important;
+}
+
+html[data-theme="dark"] .pixel-project-tech > span,
+html.dark .pixel-project-tech > span,
+body.dark .pixel-project-tech > span {
+  color: #b99ade !important;
+}
+
+html[data-theme="dark"] .pixel-project-tech div i,
+html.dark .pixel-project-tech div i,
+body.dark .pixel-project-tech div i {
+  border-color: #9b7ec8 !important;
+  color: #e0d0f0 !important;
+  background: rgba(155, 126, 200, 0.15) !important;
+}
+html[data-theme="dark"] .pixel-cassette-section,
+html.dark .pixel-cassette-section,
+body.dark .pixel-cassette-section {
+  background: #1a1a2e !important;
+  color: #e8e8e8 !important;
+}
+
+html[data-theme="dark"] .pixel-cassette-section h2,
+html[data-theme="dark"] .pixel-cassette-section h3,
+html[data-theme="dark"] .pixel-cassette-section p,
+html[data-theme="dark"] .pixel-cassette-section span,
+html.dark .pixel-cassette-section h2,
+html.dark .pixel-cassette-section h3,
+html.dark .pixel-cassette-section p,
+html.dark .pixel-cassette-section span,
+body.dark .pixel-cassette-section h2,
+body.dark .pixel-cassette-section h3,
+body.dark .pixel-cassette-section p,
+body.dark .pixel-cassette-section span {
+  color: #e8e8e8 !important;
 }

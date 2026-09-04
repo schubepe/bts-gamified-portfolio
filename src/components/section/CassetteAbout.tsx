@@ -10,9 +10,9 @@ import {
 
 import { useDarkMode } from "../../contexts/DarkModeContext";
 
-import profile1 from "../../assets/profile-placeholder-1.svg";
-import profile2 from "../../assets/profile-placeholder-2.svg";
-import profile3 from "../../assets/profile-placeholder-3.svg";
+import profile1 from "../../assets/photo_1.jpg";
+import profile2 from "../../assets/photo_2.jpg";
+import profile3 from "../../assets/photo_3.jpg";
 
 import cassetteImage from "../../assets/magic-shop/cassette.svg";
 import codeMark from "../../assets/magic-shop/code-mark.svg";
@@ -53,14 +53,14 @@ const START_POSITION: Position = {
  * begins at /audio rather than /public/audio.
  */
 // Add an audio file in public/audio and set its path here, or leave blank.
-const AUDIO_SOURCE = "";
+const AUDIO_SOURCE = "/Audio/track_1.mp3";
 
 /*
  * Change these two numbers to choose the exact part of the track.
  * This example plays the first 30 seconds.
  */
 const AUDIO_START_SECONDS = 0;
-const AUDIO_END_SECONDS = 30;
+const AUDIO_END_SECONDS = 29;
 
 const clamp = (
   value: number,
@@ -69,7 +69,7 @@ const clamp = (
 ) => Math.min(maximum, Math.max(minimum, value));
 
 const CassetteAbout = ({
-  title = "Meet Your Name",
+  title = "Meet Perlita",
   lines = DEFAULT_LINES,
   photos = DEFAULT_PHOTOS,
 }: CassetteAboutProps) => {
@@ -457,23 +457,20 @@ const CassetteAbout = ({
       setIsPlaying(false);
     };
 
-    const handleTimeUpdate = () => {
+        const handleTimeUpdate = () => {
       if (
         audio.currentTime
         >= AUDIO_END_SECONDS
       ) {
-        audio.pause();
-
         try {
           audio.currentTime =
-            AUDIO_END_SECONDS;
+            AUDIO_START_SECONDS;
+          audio.play();
         } catch {
           // Ignore a seek error while metadata is changing.
         }
-
-        setIsPlaying(false);
-        setVisibleLines(lines.length);
       }
+  
     };
 
     audio.addEventListener(

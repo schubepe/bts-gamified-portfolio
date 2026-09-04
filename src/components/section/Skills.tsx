@@ -1,4 +1,4 @@
-import DomeGallery from './DomeGallery';
+import type { CSSProperties } from 'react';
 
 import {
   useDarkMode,
@@ -8,6 +8,50 @@ import {
   useThemeColors,
   withAlpha,
 } from '../../hooks/useThemeColors';
+
+import { techStackArray } from '../../assets/techstack';
+
+// Group the skills into three labeled categories.
+// The `names` must match the `name` values in assets/techstack/index.ts.
+const CATEGORIES = [
+  {
+    label: 'Finance',
+    accent: '#8f6ab7',
+    names: [
+      'M&A',
+      'Financial Modeling',
+      'Comparable Company Analysis',
+      'Cash Flow Analysis',
+      'Financial Statement Analysis',
+      'PitchBook',
+    ],
+  },
+  {
+    label: 'Tech & Programming',
+    accent: '#5b7fbf',
+    names: [
+      'Excel',
+      'PowerPoint',
+      'Power Automate',
+      'Python',
+      'C++',
+      'AI-Assisted Development',
+    ],
+  },
+  {
+    label: 'Languages',
+    accent: '#c9a84c',
+    names: [
+      'English',
+      'German',
+      'Chinese',
+      'Spanish',
+    ],
+  },
+];
+
+const findIcon = (name: string) =>
+  techStackArray.find((item) => item.name === name)?.icon ?? '';
 
 const Skills = () => {
   const { isDarkMode } = useDarkMode();
@@ -23,9 +67,9 @@ const Skills = () => {
       className="relative overflow-hidden"
       style={{
         scrollMarginTop: '84px',
-        minHeight: 'clamp(760px, 96vh, 920px)',
+        minHeight: 'clamp(620px, 80vh, 780px)',
         paddingTop: 'clamp(76px, 8vh, 96px)',
-        paddingBottom: 'clamp(28px, 4vh, 44px)',
+        paddingBottom: 'clamp(48px, 6vh, 72px)',
         background,
       }}
     >
@@ -35,12 +79,12 @@ const Skills = () => {
         style={{
           background: isDarkMode
             ? `radial-gradient(
-                circle at 50% 46%,
+                circle at 50% 40%,
                 ${withAlpha(themeColors.primary, 0.12)},
                 transparent 66%
               )`
             : `radial-gradient(
-                circle at 50% 46%,
+                circle at 50% 40%,
                 ${withAlpha(themeColors.primary, 0.07)},
                 transparent 66%
               )`,
@@ -50,7 +94,7 @@ const Skills = () => {
       <div
         className="container mx-auto px-4 relative z-10"
         style={{
-          maxWidth: '1180px',
+          maxWidth: '1100px',
         }}
       >
         <h2
@@ -62,8 +106,6 @@ const Skills = () => {
             color: isDarkMode
               ? themeColors.colors.white
               : themeColors.colors.dark[700],
-
-            // Matches the visual size of “Certifications & Credentials”.
             fontSize: 'clamp(2rem, 3vw, 3rem)',
             lineHeight: 1.05,
             letterSpacing: '-0.025em',
@@ -72,112 +114,103 @@ const Skills = () => {
           Skills
         </h2>
 
-        <div className="skills-first-orbit">
+        <div className="skills-grid">
           <style>{`
-            .skills-first-orbit {
-              position: relative;
-              width: 100%;
-              height: clamp(540px, 66vh, 690px);
-              margin-top: 4px;
-              isolation: isolate;
+            .skills-grid {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: clamp(1rem, 2.5vw, 2rem);
+              margin-top: clamp(2rem, 4vh, 3rem);
             }
 
-            .skills-first-orbit__line {
-              position: absolute;
-              left: 50%;
-              top: 48%;
-              z-index: 0;
-              width: min(94%, 1050px);
-              height: 50%;
-              border: 1.5px dashed rgba(75, 101, 69, 0.42);
+            .skills-col {
+              display: flex;
+              flex-direction: column;
+              gap: 0.85rem;
+              padding: 1.3rem 1.1rem;
+              border: 2px solid var(--col-accent);
+              border-radius: 16px;
+              background: ${
+                isDarkMode
+                  ? 'rgba(255, 255, 255, 0.04)'
+                  : 'rgba(255, 255, 255, 0.55)'
+              };
+            }
+
+            .skills-col__header {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              margin-bottom: 0.35rem;
+              padding-bottom: 0.6rem;
+              border-bottom: 2px solid var(--col-accent);
+              font-weight: 700;
+              font-size: 0.95rem;
+              letter-spacing: 0.02em;
+              color: ${isDarkMode ? '#ffffff' : '#3d294c'};
+            }
+
+            .skills-col__dot {
+              width: 12px;
+              height: 12px;
               border-radius: 50%;
-              transform-origin: center;
-              pointer-events: none;
+              background: var(--col-accent);
+              flex-shrink: 0;
             }
 
-            .skills-first-orbit__line--one {
-              transform:
-                translate(-50%, -50%)
-                rotate(15deg);
+            .skills-item {
+              display: flex;
+              align-items: center;
+              gap: 0.7rem;
             }
 
-            .skills-first-orbit__line--two {
-              transform:
-                translate(-50%, -50%)
-                rotate(-15deg);
+            .skills-item img {
+              width: 34px;
+              height: 34px;
+              border-radius: 7px;
+              object-fit: contain;
+              flex-shrink: 0;
+              background: #ffffff;
+              padding: 3px;
+              border: 1px solid rgba(0, 0, 0, 0.06);
             }
 
-            .skills-first-orbit__gallery {
-              position: absolute;
-              inset: 0 0 38px;
-              z-index: 2;
+            .skills-item span {
+              font-size: 0.82rem;
+              line-height: 1.2;
+              color: ${isDarkMode ? '#e8e8e8' : '#4a3a58'};
             }
 
-            .skills-first-orbit__caption {
-              position: absolute;
-              left: 50%;
-              bottom: 8px;
-              z-index: 4;
-              margin: 0;
-              transform: translateX(-50%);
-              white-space: nowrap;
-              pointer-events: none;
-              color: rgba(65, 84, 61, 0.78);
-              font-family:
-                ui-monospace,
-                SFMono-Regular,
-                Menlo,
-                Monaco,
-                Consolas,
-                "Liberation Mono",
-                monospace;
-              font-size: clamp(0.68rem, 1vw, 0.82rem);
-              letter-spacing: 0.14em;
-            }
-
-            @media (max-width: 760px) {
-              .skills-first-orbit {
-                height: clamp(440px, 59vh, 540px);
-              }
-
-              .skills-first-orbit__line {
-                top: 47%;
-                width: 98%;
-                height: 48%;
-              }
-
-              .skills-first-orbit__gallery {
-                inset: 0 0 34px;
-              }
-
-              .skills-first-orbit__caption {
-                bottom: 6px;
-                font-size: 0.62rem;
-                letter-spacing: 0.1em;
+            @media (max-width: 820px) {
+              .skills-grid {
+                grid-template-columns: 1fr;
               }
             }
           `}</style>
 
-          <div
-            className="skills-first-orbit__line skills-first-orbit__line--one"
-            aria-hidden="true"
-          />
+          {CATEGORIES.map((category) => (
+            <div
+              key={category.label}
+              className="skills-col"
+              style={
+                {
+                  '--col-accent': category.accent,
+                } as CSSProperties
+              }
+            >
+              <div className="skills-col__header">
+                <span className="skills-col__dot" />
+                {category.label}
+              </div>
 
-          <div
-            className="skills-first-orbit__line skills-first-orbit__line--two"
-            aria-hidden="true"
-          />
-
-          <div className="skills-first-orbit__gallery">
-            <DomeGallery />
-          </div>
-
-          <p
-            className="skills-first-orbit__caption"
-            aria-hidden="true"
-          >
-            360° DRAG&nbsp;&nbsp; EXPLORE THE ORBIT
-          </p>
+              {category.names.map((name) => (
+                <div key={name} className="skills-item">
+                  <img src={findIcon(name)} alt={name} />
+                  <span>{name}</span>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </section>

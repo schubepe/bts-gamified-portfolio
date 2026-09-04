@@ -952,7 +952,7 @@ body[data-theme="dark"] .pixel-garden-stage {
   left: var(--object-x);
   top: var(--object-y);
   z-index: 18;
-  width: 82px;
+  width: 120px;
   min-height: 92px;
   display: grid;
   justify-items: center;
@@ -3688,4 +3688,8 @@ html[data-theme="dark"] .pixel-main-shop__body {
     width: 68px;
     height: 58px;
   }
+}
+.pixel-garden-stage button strong {
+  font-size: 0.55rem !important;
+  letter-spacing: 0.02em !important;
 }
