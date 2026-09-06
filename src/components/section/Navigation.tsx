@@ -904,7 +904,7 @@ const Navigation = () => {
                 opacity: 0.84,
               }}
             >
-              Complete FORM, CODE and STORY
+              Complete ORIGINATE, ANALYSIS and EXECUTE
               to collect 300 XP and unlock
               Projects.
             </span>

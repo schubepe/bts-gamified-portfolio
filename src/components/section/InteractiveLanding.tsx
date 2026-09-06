@@ -723,7 +723,7 @@ const InteractiveLanding = ({ asciiArt }: InteractiveLandingProps) => {
 
             <p>
               Return ORIGINATE, ANALYSIS and EXECUTE to the Magic Shop terminal.
-              ORIGINATION finds the opportunity. ANALYSIS turns data into insight. EXECUTION delivers the solution.
+              ORIGINATE finds the opportunity. ANALYSIS turns data into insight. EXECUTE delivers the solution.
             </p>
 
             <div className="pixel-quest-status" aria-live="polite">
